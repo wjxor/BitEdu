@@ -62,7 +62,21 @@ public class Start1 {
 		System.out.printf("합 : %.1f", fnum1 + fnum2);
 	}
 
+	// 사용자로부터 정수 1개, 실수 1개를 입력받아 곱의 결과를 출력
+	public static void Exam5() {
+		int num;
+		float fnum;
+
+		System.out.print("정수 입력 : ");
+		num = Integer.parseInt(sc.nextLine());
+
+		System.out.print("실수 입력 : ");
+		fnum = Float.parseFloat(sc.nextLine());
+
+		System.out.printf("곱의 결과는 : %.1f", num * fnum);
+	}
+
 	public static void main(String[] args) {
-		Exam4();
+		Exam5();
 	}
 }
