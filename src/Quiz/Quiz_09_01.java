@@ -11,7 +11,7 @@ public class Quiz_09_01 {
 		// Cost();
 		// Day();
 		// tri1();
-		tri2();
+		// tri2();
 		// tri3();
 		// tri4();
 	}
@@ -125,13 +125,16 @@ public class Quiz_09_01 {
 	 ****
 	*/
 	private static void tri3() {
-		for (int i = 0; i < 6; i++) {
-			for (int j = 5; j > 0; j--) {
+		for (int i = 1; i <= 4; i++) {
+			for (int j = 5; j >= 1; j--) {
 				if (i < j) {
 					System.out.print(" ");
-				} else
+				} else {
 					System.out.print("*");
+				}
+
 			}
+
 			System.out.println();
 		}
 	}
@@ -143,13 +146,14 @@ public class Quiz_09_01 {
 	   * 
 	*/
 	private static void tri4() {
-		for (int i = 0; i < 5; i++) {
+		for (int i = 1; i <= 4; i++) {
 			for (int j = 1; j <= 5; j++) {
 				if (i < j) {
 					System.out.print("*");
 				} else
 					System.out.print(" ");
 			}
+
 			System.out.println();
 		}
 	}
