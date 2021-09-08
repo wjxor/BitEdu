@@ -1,6 +1,6 @@
 package ex09_06;
 
-public class ex10 {
+public class sec10 {
 	public static void main(String[] args) {
 		Car myCar = new Car();
 
