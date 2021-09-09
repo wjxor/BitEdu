@@ -5,9 +5,8 @@ public class Archer extends GameCharacter {
 	int arrow_count;
 
 	Archer(String weapon, int damage, int arrow_count) {
-		super();
+		super(weapon, damage);
 		this.arrow_count = arrow_count;
-
 	}
 
 	public void evasion() {
@@ -22,6 +21,7 @@ public class Archer extends GameCharacter {
 	}
 
 	public void reload(int cnt) {
+		System.out.println("재장전");
 		arrow_count += cnt;
 		System.out.println("남은 화살갯수 : " + arrow_count);
 	}

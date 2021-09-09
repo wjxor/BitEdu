@@ -1,12 +1,11 @@
 package Quiz;
 
 public class Warrior2 extends GameCharacter {
-
 	// 방패 내구도
 	int Shield;
 
 	public Warrior2(String weapon, int damage, int Shield) {
-		super();
+		super(weapon, damage);
 		this.Shield = Shield;
 	}
 
