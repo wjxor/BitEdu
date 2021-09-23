@@ -4,79 +4,85 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class wjxor0923 {
-	static ArrayList<Integer> list = new ArrayList<Integer>();
-	static Scanner sc = new Scanner(System.in);
+	static ArrayList<Integer> arrlist = new ArrayList<Integer>();
+
+	static Scanner input = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
 		while (true) {
-			System.out.println("1. 숫자 저장 | 2. 저장된 숫자의 합 | 3. 저장된 숫자 전체 출력 | 4. 삭제(인덱스) |  5. 삭제(값) |  6. 종료");
-			
-			int ChooseNum = sc.nextInt();
-			
-			if (ChooseNum == 1) {
-				num_Add();
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("1. 숫자저장, 2.저장된 숫자합 출력, 3.저장된 숫자 전체 출력, 4.삭제 idx, 5.삭제 숫자(값), 6.종료");
+			System.out.println("---------------------------------------------------------------------------");
+
+			int num = Integer.parseInt(input.nextLine());
+			switch (num) {
+			case 1:
+				number_add();
 				break;
-			} else if (ChooseNum == 2) {
-				num_Sum();
+			case 2:
+				numberlist_sum();
 				break;
-			} else if (ChooseNum == 3) {
-				num_ViewAll();
+			case 3:
+				numberlist_selectall();
 				break;
-			} else if (ChooseNum == 4) {
-				num_DeleteByIdx();
+			case 4:
+				numberlist_delete_fromidx();
 				break;
-			} else if (ChooseNum == 5) {
-				num_DeleteByNum();
+			case 5:
+				numberlist_delete_fromvalue();
 				break;
-			} else {
-				System.out.println("");
 			}
 		}
-
 	}
 
-	static boolean num_Add() {
-		System.out.print("리스트에 삽입할 숫자 입력 : ");
-		int num = sc.nextInt();
-		return list.add(num);
+	// 숫자저장
+	static void number_add() {
+		System.out.println("숫자 : ");
+		int inputnum = Integer.parseInt(input.nextLine());
+		// ArrayList .add(요소) 요소 추가
+		arrlist.add(inputnum);
 	}
 
-	// 저장된 숫자의 합
-	static void num_Sum() {
+	// 숫자리스트 전체 합
+	static void numberlist_sum() {
 		int sum = 0;
-		for (Integer num : list) {
-			sum += num;
+		for (int i = 0; i < arrlist.size(); i++) {
+			sum += arrlist.get(i);
 		}
+		System.out.println(sum);
 
-		System.out.println("합 : " + sum);
+//	      for(int num : arrlist) {
+//	         
+//	      }
 	}
 
-	// 저장된 숫자 전체출력
-	static void num_ViewAll() {
-		for (int i = 0; i < list.size(); i++) {
-			System.out.println("[" + (i + 1) + "] " + list.get(i));
+	// 숫자리스트 전체 조회
+	static void numberlist_selectall() {
+		for (int num : arrlist) {
+			System.out.print(num + " ");
 		}
+		System.out.println();
 	}
 
-	// 삭제할 idx 입력
-	static void num_DeleteByIdx() {
-		System.out.println("삭제할 위치를 입력하세요");
-		int idx = sc.nextInt();
-		list.remove(idx - 1);
+	// 숫자리스트 인덱스로 삭제
+	static void numberlist_delete_fromidx() {
+		System.out.println("idx : ");
+		int inputidx = Integer.parseInt(input.nextLine());
+		arrlist.remove(inputidx);
 	}
 
-	// 삭제할 값 입력
-	static boolean num_DeleteByNum() {
-		System.out.println("삭제할 숫자를 입력하세요");
-		int num = sc.nextInt();
-		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i) == (num)) {
-				list.remove(i);
-				return true;
+	// 숫자리스트 값으로 삭제
+	static void numberlist_delete_fromvalue() {
+		System.out.println("값 : ");
+		int inputnum = Integer.parseInt(input.nextLine());
+		for (int i = 0; i < arrlist.size(); i++) {
+			if (arrlist.get(i) == inputnum) {
+				arrlist.remove(i);
+				return;
 			}
 		}
-		return false;
+		System.out.println("해당 값이 존재하지 않습니다.");
 	}
 
 }
